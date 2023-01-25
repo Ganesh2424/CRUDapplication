@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Student Database</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<style>
+.btn{
+    background-color: rgb(50, 197, 223);
+    color: black;
+    border: none;
+}
+ h1{
+     color: black;
+     background-color:rgb(50, 197, 223);
+     font-size: 30px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+</style>
+    
+<body style="background-color: powderblue;">
+<div align="center">
+    <h1>Create New Student</h1>
+    <br>
+     <div class="col-sm-4">
+    <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+ 
+      
+ 		<div alight="left">
+            <tr>  
+                <label class="panel-body:form-label" >Roll No.</label>
+                <td>
+	                <input type="hidden" th:field="*{id}" />
+	                <input type="text" th:field="*{Roll No.}" class="form-control" placeholder=" Roll No." />
+                </td>
+            </tr>
+         </div>   
+            
+          	<div alight="left">
+          
+            <tr>
+                 <label class="form-label" >Name of Student</label>
+                <td><input type="text" th:field="*{Student Name}" class="form-control" placeholder="Student Name" /></td>
+            </tr>
+            </div> 
+            <div alight="left">
+                 <tr>
+                 <label class="form-label" >Branch of Engineering</label>
+                <td><input type="text" th:field="*{Branch}" class="form-control" placeholder="Branch" /></td>
+            </tr>
+            </div> 
+			<br>
+            <tr>
+            <td colspan="2"><button type="submit" class="btn btn-info">Submit</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
